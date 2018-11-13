@@ -1,0 +1,22 @@
+.footer .profile {
+  font-size: 2em;
+  height: 300px;
+  width: 500px;
+  margin-top: 50px;
+  color: purple;
+  background-color: black;
+}
+
+.footer .profile .group {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  background-color: black;
+}
+
+.footer .profile .group .instance {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  background-color: black;
+}

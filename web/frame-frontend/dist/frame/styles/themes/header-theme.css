@@ -1,0 +1,4 @@
+.header {
+  /* fallback, not explicitly callable! See nginx rule: frame.conf */
+  background-color: orangered;
+}

@@ -19,11 +19,11 @@ test:
 	curl http://localhost:8080/dashboard/ > ~/Downloads/response_slash.html
 	curl http://localhost:8080/dashboard/asdf > ~/Downloads/response_slash_uri.html
 	curl http://localhost:8080/frame > ~/Downloads/response_frame.html
-	if grep 'header partial' web/frame-frontend/dist/frame/header.html; then echo "Setup OK"; else echo "Setup Fehler\!"; fi
-	if grep 'footer partial' web/frame-frontend/dist/frame/footer.html; then echo "Setup OK"; else echo "Setup Fehler\!"; fi
+	if grep 'header instance' web/frame-frontend/dist/frame/header.html; then echo "Setup OK"; else echo "Setup Fehler\!"; fi
+	if grep 'footer instance' web/frame-frontend/dist/frame/footer.html; then echo "Setup OK"; else echo "Setup Fehler\!"; fi
 	if grep 'value="with a SSI test value"' web/frame-frontend/dist/frame/index.html; then echo "Setup OK"; else echo "Setup Fehler\!"; fi
-	if grep 'header partial' ~/Downloads/response_no_slash.html; then echo "Test OK"; else echo "Test Fehler\!"; fi
-	if grep 'footer partial' ~/Downloads/response_no_slash.html; then echo "Test OK"; else echo "Test Fehler\!"; fi
+	if grep 'header instance' ~/Downloads/response_no_slash.html; then echo "Test OK"; else echo "Test Fehler\!"; fi
+	if grep 'footer instance' ~/Downloads/response_no_slash.html; then echo "Test OK"; else echo "Test Fehler\!"; fi
 	if ! grep 'value="with a SSI test value"' ~/Downloads/response_frame.html; then echo "Test OK"; else echo "Test Fehler\!"; fi
 	if grep 'with a SSI test value' ~/Downloads/response_frame.html; then echo "Test OK"; else echo "Test Fehler\!"; fi
 	diff ~/Downloads/response_no_slash.html ~/Downloads/response_slash.html

@@ -1,0 +1,22 @@
+.header .profile {
+  font-size: 2em;
+  height: 300px;
+  width: 500px;
+  margin-bottom: 50px;
+  color: purple;
+  background-color: black;
+}
+
+.header .profile .group {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  background-color: black;
+}
+
+.header .profile .group .instance {
+  height: 80%;
+  width: 80%;
+  margin: auto;
+  background-color: black;
+}
