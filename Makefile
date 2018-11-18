@@ -30,6 +30,10 @@ test:
 	diff ~/Downloads/response_no_slash.html ~/Downloads/response_slash_uri.html
 debug:
 	docker exec -ti nginx-ssi tail -f /var/log/nginx/debug.log
+find-cached-files:
+	docker exec -ti nginx-ssi sudo find /var/cache/nginx -type f
+clear-cache:
+	docker exec -ti nginx-ssi sudo find /var/cache/nginx -type f -delete
 debug-if-file-exists:
 	# if (-f /var/www/...)
 	docker exec -ti nginx-ssi tail -f /var/log/nginx/debug.log | grep --text -A1 'http script file op 0000000000000000'

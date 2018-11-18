@@ -2,35 +2,22 @@
 <!--# set var="ssi_var_hostname" value="$hostname" -->
 <!--# set var="ssi_var_frame" value="$frameFrontend" -->
 
+<script type="text/javascript">
+(function() {
+  if (window.ssi) {
+    console.log('set frame variable');
+    window.ssi.frame = '<!--# echo var="ssi_var_frame" -->';
+  } else {
+    console.log('window.ssi missing');
+  }
+})();
+</script>
+
 <script type="text/javascript" src="<!--# echo var="ssi_var_frame" -->/scripts/header.js"></script>
-<script type="text/javascript" src="<!--# echo var="ssi_var_frame" -->/scripts/footer.js"></script>
+<script type="text/javascript" src="<!--# echo var="ssi_var_frame" -->/scripts/header.js"></script>
 
 <link rel="stylesheet" href="<!--# echo var="ssi_var_frame" -->/styles/header.css">
 <link rel="stylesheet" href="<!--# echo var="ssi_var_frame" -->/styles/footer.css">
 
-<script type="text/javascript">
-  var frame = '<!--# echo var="ssi_var_frame" -->';
-  var themesPath = frame + '/styles/themes';
-
-  if (window.ssi) {
-    createLink(themesPath + '/header-theme.css', 'headerIdProfile');
-    createLink(themesPath + '/' + window.ssi.group + '/header-theme.css', 'headerIdGroup');
-    createLink(themesPath + '/' + window.ssi.group + '/' + window.ssi.instance + '/header-theme.css', 'headerIdInstance');
-
-    function createLink(hrefLink, id) {
-      var link = document.createElement('link');
-      link.id = id;
-      link.href = hrefLink;
-      link.type = 'text/css';
-      link.rel = 'stylesheet';
-
-      link.onload = function() {
-        console.log('link loaded: ' + id);
-      };
-      document.getElementsByTagName('head')[0].appendChild(link);
-    }
-  } else {
-    console.log('window.ssi missing');
-  }
-</script>
+<script type="text/javascript" src="<!--# echo var="ssi_var_frame" -->/scripts/setup.js"></script>
 <!-- END SSI -->
